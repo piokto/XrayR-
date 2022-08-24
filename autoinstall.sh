@@ -246,7 +246,7 @@ install_XrayR() {
 	# 设置机场通讯密钥
     echo "输入机场通讯密钥"
     echo ""
-    read -p "请输入机场地址:" ApiKey
+    read -p "请输入机场通讯密钥:" ApiKey
     [ -z "${ApiKey}" ]
     echo "---------------------------"
     echo "您的机场地址为 ${ApiKey}"
