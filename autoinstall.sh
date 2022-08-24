@@ -233,23 +233,26 @@ install_XrayR() {
     echo -e "\033[1;33m 检测环境是否安全\033[0m"
     echo -e "\033[1;33m 正在加载........\033[0m"
 	# 设置机场地址
+
     echo "输入机场地址"
     echo ""
-    read -p "请输入机场地址:" Api_Host
-    [ -z "${Api_Host}" ]
+    read -p "请输入机场地址:" ApiHost
+    [ -z "${ApiHost}" ]
     echo "---------------------------"
-    echo "您的机场地址为 ${Api_Host}"
+    echo "您的机场地址为 ${ApiHost}"
     echo "---------------------------"
     echo ""
+    
 	# 设置机场通讯密钥
     echo "输入机场通讯密钥"
     echo ""
-    read -p "请输入机场地址:" Api_key
-    [ -z "${Api_key}" ]
+    read -p "请输入机场地址:" ApiKey
+    [ -z "${ApiKey}" ]
     echo "---------------------------"
-    echo "您的机场地址为 ${Api_key}"
+    echo "您的机场地址为 ${ApiKey}"
     echo "---------------------------"
     echo ""
+    
 	# 设置节点序号
     echo "设定节点序号"
     echo ""
@@ -302,12 +305,12 @@ install_XrayR() {
     fi
 
     echo "---------------------------"
-    echo "您的机场地址为 ${Api_host}"
+    echo "您的机场地址为 ${ApiHost}"
     echo "---------------------------"
     echo ""
 	
 	echo "---------------------------"
-    echo "您的机场通讯密钥为 ${Api_Key}"
+    echo "您的机场通讯密钥为 ${ApiKey}"
     echo "---------------------------"
     echo ""
 	
@@ -352,8 +355,8 @@ install_XrayR() {
     # Writing json
     echo "正在尝试写入配置文件..."
     wget https://raw.githubusercontent.com/piokto/XrayR-/main/config.yml -O /etc/XrayR/config.yml
-    sed -i "s/ApiHost:.*/ApiHost: ${Api_Host}/g" /etc/XrayR/config.yml
-    sed -i "s/ApiKey:.*/ApiKey: ${Api_Key}/g" /etc/XrayR/config.yml
+    sed -i "s/ApiHost:.*/ApiHost: ${ApiHost}/g" /etc/XrayR/config.yml
+    sed -i "s/ApiKey:.*/ApiKey: ${ApiKey}/g" /etc/XrayR/config.yml
     sed -i "s/NodeID:.*/NodeID: ${node_id}/g" /etc/XrayR/config.yml
     sed -i "s/NodeType:.*/NodeType: ${node_type}/g" /etc/XrayR/config.yml
     sed -i "s/CertDomain:.*/CertDomain: ${Cert_Domain}/g" /etc/XrayR/config.yml
