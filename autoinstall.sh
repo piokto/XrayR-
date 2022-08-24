@@ -232,8 +232,6 @@ install_XrayR() {
     echo -e "\033[1;33m 正在启动Piokto XrayR对接工具 \033[0m"
     echo -e "\033[1;33m 检测环境是否安全\033[0m"
     echo -e "\033[1;33m 正在加载........\033[0m"
-	# 设置机场地址
-
     echo "输入机场地址"
     echo ""
     read -p "请输入机场地址:" ApiHost
