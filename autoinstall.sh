@@ -234,10 +234,10 @@ install_XrayR() {
     echo -e "\033[1;33m 正在加载........\033[0m"
     echo "输入机场地址"
     echo ""
-    read -p "请输入机场地址:" ApiHost
-    [ -z "${ApiHost}" ]
+    read -p "请输入机场地址:" Api_Host
+    [ -z "${Api_Host}" ]
     echo "---------------------------"
-    echo "您的机场地址为 ${ApiHost}"
+    echo "您的机场地址为 ${Api_Host}"
     echo "---------------------------"
     echo ""
     
@@ -303,11 +303,11 @@ install_XrayR() {
     fi
 
     echo "---------------------------"
-    echo "您的机场地址为 ${ApiHost}"
+    echo "您的机场地址为 ${Api_Host}"
     echo "---------------------------"
     echo ""
 	
-	echo "---------------------------"
+    echo "---------------------------"
     echo "您的机场通讯密钥为 ${ApiKey}"
     echo "---------------------------"
     echo ""
@@ -353,7 +353,7 @@ install_XrayR() {
     # Writing json
     echo "正在尝试写入配置文件..."
     wget https://raw.githubusercontent.com/piokto/XrayR-/main/config.yml -O /etc/XrayR/config.yml
-    sed -i "s/ApiHost:.*/ApiHost: ${ApiHost}/g" /etc/XrayR/config.yml
+    sed -i "s/ApiHost:.*/ApiHost: ${Api_Host} /g"/etc/XrayR/config.yml
     sed -i "s/ApiKey:.*/ApiKey: ${ApiKey}/g" /etc/XrayR/config.yml
     sed -i "s/NodeID:.*/NodeID: ${node_id}/g" /etc/XrayR/config.yml
     sed -i "s/NodeType:.*/NodeType: ${node_type}/g" /etc/XrayR/config.yml
